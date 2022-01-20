@@ -32,6 +32,10 @@ var (
 	// Default is true.
 	Lowercase = true
 
+	// Titlecase defines if the resulting slug is transformed to title case.
+	// Default is false.
+	Titlecase = false
+
 	regexpNonAuthorizedChars = regexp.MustCompile("[^a-zA-Z0-9-_]")
 	regexpMultipleDashes     = regexp.MustCompile("-+")
 )
@@ -100,6 +104,10 @@ func MakeLang(s string, lang string) (slug string) {
 
 	if Lowercase {
 		slug = strings.ToLower(slug)
+	}
+
+	if Titlecase {
+		slug = strings.ToTitle(slug)
 	}
 
 	// Process all remaining symbols
