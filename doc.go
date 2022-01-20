@@ -33,6 +33,10 @@ Example:
 		deUppercaseText := slug.MakeLang("Diese & Dass", "de")
 		fmt.Println(deUppercaseText) // Will print: "Diese-und-Dass"
 
+		slug.Titlecase = true // Keep uppercase characters
+		TitlecaseText := slug.MakeLang("diese & dass", "de")
+		fmt.Println(TitlecaseText) // Will print: "Diese-Und-Dass"
+
 		slug.CustomSub = map[string]string{
 			"water": "sand",
 		}
