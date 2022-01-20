@@ -1,4 +1,4 @@
-module github.com/coreyk/slug
+module github.com/gosimple/slug
 
 go 1.11
 
